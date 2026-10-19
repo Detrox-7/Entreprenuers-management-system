@@ -1,0 +1,3 @@
+package college.ems.servlet;
+import college.ems.dao.DashboardDAO;import jakarta.servlet.*;import jakarta.servlet.annotation.WebServlet;import jakarta.servlet.http.*;import java.io.IOException;
+@WebServlet("/dashboard") public class DashboardServlet extends HttpServlet{private final DashboardDAO dao=new DashboardDAO();@Override protected void doGet(HttpServletRequest req,HttpServletResponse resp)throws ServletException,IOException{try{req.setAttribute("summary",dao.summary());}catch(Exception e){getServletContext().log("Dashboard query failed",e);req.setAttribute("error","Could not load dashboard. Check the database connection.");}req.getRequestDispatcher("/WEB-INF/views/dashboard.jsp").forward(req,resp);}}

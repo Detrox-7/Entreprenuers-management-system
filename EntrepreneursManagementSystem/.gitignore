@@ -1,0 +1,3 @@
+target/
+src/main/resources/db.properties
+.settings/org.eclipse.wst.server.core.prefs

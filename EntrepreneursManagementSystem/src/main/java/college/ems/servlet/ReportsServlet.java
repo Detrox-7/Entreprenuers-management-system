@@ -1,0 +1,3 @@
+package college.ems.servlet;
+import college.ems.dao.DashboardDAO;import jakarta.servlet.*;import jakarta.servlet.annotation.WebServlet;import jakarta.servlet.http.*;import java.io.IOException;
+@WebServlet({"/reports","/settings"}) public class ReportsServlet extends HttpServlet{@Override protected void doGet(HttpServletRequest req,HttpServletResponse resp)throws ServletException,IOException{req.setAttribute("title",req.getServletPath().equals("/reports")?"Reports":"Settings");try{req.setAttribute("summary",new DashboardDAO().summary());}catch(Exception e){req.setAttribute("error","Could not load summary. Check database configuration.");}req.getRequestDispatcher("/WEB-INF/views/placeholder.jsp").forward(req,resp);}}
