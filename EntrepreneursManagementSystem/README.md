@@ -21,7 +21,7 @@ College-level Java web project using **JSP, Jakarta Servlets, JDBC, MySQL 8, and
 
 ## Requirements
 
-- JDK 17
+- JDK 25 (the Tomcat 10.1 runtime must also use Java 25)
 - Apache Tomcat 10.1 (Jakarta Servlet 6)
 - MySQL 8
 - Eclipse IDE for Enterprise Java and Web Developers (includes Web Tools Platform)
@@ -63,7 +63,7 @@ Sign in with the username and original password used to generate the hash. The l
 
 1. Extract/copy this EntrepreneursManagementSystem folder to a normal development location.
 2. In Eclipse, choose **File → Import → Maven → Existing Maven Projects**, select this folder, and finish. Eclipse imports it as a Maven web application; included .project, .classpath and facet metadata support Dynamic Web Project tooling.
-3. Right-click the project → **Properties → Project Facets**. Ensure Java 17 and Dynamic Web Module 6.0 are selected. In **Targeted Runtimes**, select Apache Tomcat v10.1.
+3. Right-click the project → **Properties → Project Facets**. Ensure Java 25 and Dynamic Web Module 6.0 are selected. In **Targeted Runtimes**, select Apache Tomcat v10.1, configured to run with Java 25.
 4. If Tomcat is not listed: **Window → Show View → Servers**, choose **New → Server → Apache → Tomcat v10.1**, and browse to your Tomcat installation.
 5. Right-click the project → **Maven → Update Project** so Maven resolves MySQL Connector/J, BCrypt and Jakarta JSTL. Connector/J is included by Maven; do not separately add a second driver copy.
 6. Start MySQL and confirm your db.properties or environment settings.
